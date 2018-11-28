@@ -27,7 +27,7 @@ pipeline {
 
     stage("Docker build") {
       steps {
-        sh "docker build -t leszko/calculator:${BUILD_TIMESTAMP} ."
+        sh "docker build -t leszko/calculator:tag1 ."
       }
     }
 
@@ -42,7 +42,7 @@ pipeline {
 
     stage("Docker push") {
       steps {
-        sh "docker push leszko/calculator:${BUILD_TIMESTAMP}"
+        sh "docker push leszko/calculator:tag1"
       }
     }
 
