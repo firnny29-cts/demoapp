@@ -35,14 +35,14 @@ pipeline {
       steps {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'leszko',
                           usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-          sh "docker login --username $USERNAME --password $PASSWORD"
+          sh "docker login --username ameena06 --password Firnny29"
         }
       }
     }
 
     stage("Docker push") {
       steps {
-        sh "docker push leszko/calculator:tag1"
+        sh "docker push ameena06/calculator:tag1"
       }
     }
 
