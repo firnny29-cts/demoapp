@@ -63,7 +63,7 @@ pipeline {
 
     stage("Release") {
       steps {
-        sh "echo "command""
+        sh "echo command"
         sleep 60
       }
     }
