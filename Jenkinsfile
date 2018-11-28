@@ -46,7 +46,7 @@ pipeline {
     stage("Deploy to staging") {
       steps {
         sh "echo ansible script"
-        sleep 60
+        
       }
     }
 
@@ -61,8 +61,7 @@ pipeline {
     stage("Release") {
       steps {
         sh "echo command"
-        sleep 60
-      }
+        }
     }
 
   }
