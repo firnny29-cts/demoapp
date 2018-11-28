@@ -48,14 +48,14 @@ pipeline {
 
     stage("Deploy to staging") {
       steps {
-        sh "ansible-playbook playbook.yml -i inventory/staging"
+        sh "echo "ansible script""
         sleep 60
       }
     }
 
     stage("Acceptance test") {
       steps {
-	sh "./acceptance_test.sh 192.168.0.166"
+	sh "echo "acceptance test script""
       }
     }
 	  
@@ -63,15 +63,10 @@ pipeline {
 
     stage("Release") {
       steps {
-        sh "ansible-playbook playbook.yml -i inventory/production"
+        sh "echo "command""
         sleep 60
       }
     }
 
-    stage("Smoke test") {
-      steps {
-	sh "./smoke_test.sh 192.168.0.115"
-      }
-    }
   }
 }
