@@ -48,14 +48,14 @@ pipeline {
 
     stage("Deploy to staging") {
       steps {
-        sh "echo "ansible script""
+        sh "echo ansible script"
         sleep 60
       }
     }
 
     stage("Acceptance test") {
       steps {
-	sh "echo "acceptance test script""
+	sh "echo acceptance test script"
       }
     }
 	  
