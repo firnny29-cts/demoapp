@@ -27,7 +27,7 @@ pipeline {
 
     stage("Docker build") {
       steps {
-        sh "sudo docker build -t leszko/calculator:tag1 ."
+        sh "docker build -t leszko/calculator:tag1 ."
       }
     }
 
@@ -35,14 +35,14 @@ pipeline {
       steps {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'leszko',
                           usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-          sh "sudo docker login --username $USERNAME --password $PASSWORD"
+          sh "docker login --username $USERNAME --password $PASSWORD"
         }
       }
     }
 
     stage("Docker push") {
       steps {
-        sh "sudo docker push leszko/calculator:tag1"
+        sh "docker push leszko/calculator:tag1"
       }
     }
 
