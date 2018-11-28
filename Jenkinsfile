@@ -27,7 +27,7 @@ pipeline {
 
     stage("Docker build") {
       steps {
-        sh "docker build -t leszko/calculator:tag1 ."
+        sh "docker build -t ameena06/calculator:tag1 ."
       }
     }
 
